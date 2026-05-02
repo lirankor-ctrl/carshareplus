@@ -1,0 +1,1 @@
+- [CarShare Family project state](project_carshare.md) — Hebrew RTL car-sharing MVP; all routes built, localStorage backend, Next.js 14

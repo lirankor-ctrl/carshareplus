@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  direction: rtl;
+  font-family: 'Segoe UI', 'Arial Hebrew', Arial, system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f0fdf4;
+  color: #111827;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #bbf7d0; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #86efac; }
+
+/* Date/time inputs — hide native picker icon for custom styling */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5);
+  cursor: pointer;
+}
+
+/* Prevent text selection on tap */
+.no-select { user-select: none; -webkit-user-select: none; }
+
+/* Smooth transition for modals */
+.modal-backdrop {
+  animation: fadeIn 0.15s ease-out;
+}
+.modal-panel {
+  animation: slideUp 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes toastIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+.toast-enter { animation: toastIn 0.25s ease-out; }
