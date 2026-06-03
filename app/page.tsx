@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { Car } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
 
@@ -41,9 +42,14 @@ export default function RootPage() {
 
   return (
     <div className="min-h-dvh flex flex-col items-center justify-center bg-brand-50 gap-4">
-      <div className="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center shadow-lg">
-        <Car className="w-8 h-8 text-white" />
-      </div>
+      <Image
+        src="/logo.jpg"
+        alt="CarShare Family"
+        width={64}
+        height={64}
+        priority
+        className="w-16 h-16 rounded-2xl object-cover shadow-lg"
+      />
       <div className="w-8 h-8 border-4 border-brand-400 border-t-transparent rounded-full animate-spin" />
       {IS_DEV && (
         <p className="text-xs text-gray-400 font-mono mt-1">{loadStatus}</p>

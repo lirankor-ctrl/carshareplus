@@ -3,6 +3,7 @@ import './globals.css';
 import Providers from '@/components/layout/Providers';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: 'CarShare Family — לוח שנה משותף לרכב המשפחתי',
   description: 'ניהול תורים לרכב המשותף של המשפחה בצורה פשוטה ונוחה',
 };

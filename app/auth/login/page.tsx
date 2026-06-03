@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Car, Eye, EyeOff } from 'lucide-react';
+import Image from 'next/image';
+import { Eye, EyeOff } from 'lucide-react';
 import { Input } from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
 import { authService } from '@/services/authService';
@@ -66,9 +67,14 @@ export default function LoginPage() {
     <div className="min-h-dvh bg-gradient-to-b from-brand-50 to-white flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-sm">
         <div className="flex flex-col items-center mb-8">
-          <div className="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center shadow-lg mb-3">
-            <Car className="w-8 h-8 text-white" />
-          </div>
+          <Image
+            src="/logo.jpg"
+            alt="CarShare Family"
+            width={64}
+            height={64}
+            priority
+            className="w-16 h-16 rounded-2xl object-cover shadow-lg mb-3"
+          />
           <h1 className="text-2xl font-black text-gray-900">CarShare Family</h1>
           <p className="text-sm text-gray-500 mt-1">לוח הזמנים המשותף לרכב</p>
         </div>

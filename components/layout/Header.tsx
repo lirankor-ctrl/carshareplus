@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Car, LogOut } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
 import { authService } from '@/services/authService';
 import Avatar from '@/components/ui/Avatar';
@@ -28,9 +29,14 @@ export default function Header({ title, backHref }: HeaderProps) {
         {/* Brand / title */}
         <div className="flex items-center gap-2 min-w-0">
           <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-brand-600 rounded-xl flex items-center justify-center shrink-0">
-              <Car className="w-4 h-4 text-white" />
-            </div>
+            <Image
+              src="/logo.jpg"
+              alt="CarShare Family"
+              width={32}
+              height={32}
+              priority
+              className="w-8 h-8 rounded-xl object-cover shrink-0"
+            />
             <span className="font-bold text-brand-700 text-base hidden sm:block">
               CarShare Family
             </span>

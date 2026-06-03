@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Car, Eye, EyeOff } from 'lucide-react';
+import Image from 'next/image';
+import { Eye, EyeOff } from 'lucide-react';
 import { Input } from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
 import { authService } from '@/services/authService';
@@ -74,9 +75,14 @@ export default function SignupPage() {
     <div className="min-h-dvh bg-gradient-to-b from-brand-50 to-white flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-sm">
         <div className="flex flex-col items-center mb-6">
-          <div className="w-14 h-14 bg-brand-600 rounded-2xl flex items-center justify-center shadow-lg mb-2">
-            <Car className="w-7 h-7 text-white" />
-          </div>
+          <Image
+            src="/logo.jpg"
+            alt="CarShare Family"
+            width={56}
+            height={56}
+            priority
+            className="w-14 h-14 rounded-2xl object-cover shadow-lg mb-2"
+          />
           <h1 className="text-xl font-black text-gray-900">הרשמה חדשה</h1>
           <p className="text-xs text-gray-500 mt-1">הצטרף לניהול הרכב המשפחתי</p>
         </div>
